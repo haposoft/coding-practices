@@ -9,6 +9,8 @@ sidebar_position: 2
 Switch case sử dụng loose comparison. Để khắc phục điều này, từ bản PHP8.0, chúng ta có thể sử dụng match.
 
 ```php
+<?php
+
 function runA(): void {
     echo 'runA is running' . PHP_EOL;
 }
