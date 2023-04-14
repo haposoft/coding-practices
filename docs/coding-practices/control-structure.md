@@ -15,6 +15,7 @@ function runA(): void {
 function runDefault(): void {
     echo 'runDefault is running' . PHP_EOL;
 }
+
 $type = true;
 
 // Bad
