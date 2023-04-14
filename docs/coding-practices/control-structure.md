@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## 1. Switch case và match
 
-Switch case sử dụng loose comparison. Để khác phục điều này, từ bản PHP8.0, chung ta có thể sử dụng match.
+Switch case sử dụng loose comparison. Để khắc phục điều này, từ bản PHP8.0, chúng ta có thể sử dụng match.
 
 ```php
 function runA(): void {
