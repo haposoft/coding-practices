@@ -1,4 +1,4 @@
-# Website
+# Haposoft Coding Practices
 
 This website is served [here](https://haposoft.github.io/coding-practices/).
 
