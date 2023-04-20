@@ -46,6 +46,30 @@ function numberToWord($num) {
     }
 }
 
+// Very Good
+function numberToWord($num) {
+    switch($num) {
+        case 1:
+            return "one";
+            break;
+        case 2:
+            return "two";
+            break;
+        case 3:
+            return "three";
+            break;
+        case 4:
+            return "four";
+            break;
+        case 5:
+            return "five";
+            break;
+        default:
+            return "Error: Invalid number";
+    }
+}
+
+
 ```
 
 Về cơ bản, cả hai cách đều đúng và giải quyết được bài toán. Tuy nhiên, sử dụng if-else sẽ giúp cho code dễ hiểu hơn, trong khi sử dụng toán tử 3 ngôi có thể làm cho code ngắn hơn và gọn hơn. Tuy nhiên, việc sử dụng toán tử 3 ngôi cũng nên được sử dụng một cách cẩn thận để tránh làm cho code trở nên khó hiểu.

@@ -32,16 +32,19 @@ Quy tắc đặt tên:
 ```php
 <?php
 
-use App\Http\UserController;
+// Import UserController class
+require_once('app/Http/UserController.php');
 
 // Bad
-
-Route::get('user', 'UserController');
-Route::get('user/1', 'UserController');
-Route::get('user_s', 'UserController');
+if ($_SERVER['REQUEST_URI'] === '/user') {
+    UserController::index();
+}
 
 // Good
-Route::get('users', 'UserController');
+if ($_SERVER['REQUEST_URI'] === '/users') {
+    UserController::index();
+}
+
 ```
 
 ## 3. Named route
@@ -55,15 +58,23 @@ Quy tắc đặt tên:
 ```php
 <?php
 
-use App\Http\UserController;
+// Import UserController class
+require_once('app/Http/UserController.php');
 
 // Bad
-
-Route::get('users', 'UserController')->name('user-index');
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] === '/users') {
+    UserController::index()->name('user-index');
+}
 
 // Good
-Route::get('users', 'UserController')->name('user.index');
-Route::get('users', 'UserController')->name('user.show_active');
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] === '/users') {
+    UserController::index()->name('user.index');
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] === '/users/active') {
+    UserController::showActive()->name('user.show_active');
+}
+
 ```
 
 ## 4. Model
@@ -91,48 +102,7 @@ class User {
 }
 ```
 
-## 5. Relationship
-
-Quy tắc đặt tên:
-
-- Tên Relationship phải phải là một danh từ tiếng Anh.
-- Không chứa dấu cách.
-- hasOne hoặc belongsTo relationship sẽ là số ít
-- Tất cả các relationships khác sẽ là số nhiều
-
-```php
-<?php
-
-namespace App\Models;
-
-class Tour extends Model
-{
-    // Bad
-
-    public function review()
-    {
-        return $this->hasMany(Review::class);
-    }
-
-    public function places()
-    {
-        return $this->belongsTo(Place::class);
-    }
-
-    // Good
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
-    }
-
-    public function place()
-    {
-        return $this->belongsTo(Place::class);
-    }
-}
-```
-
-## 6. Table (Tên bảng)
+## 5. Table (Tên bảng)
 
 Quy tắc đặt tên:
 
@@ -141,70 +111,30 @@ Quy tắc đặt tên:
 - Phải là số nhiều
 
 ```php
-<? php
+    // Bad
+    user, place, tour
 
-class CreateUsersTable extends Migration
-{
-    public function up()
-    {
-        // Bad
-        Schema::create('user', function (Blueprint $table) {
-            ...
-        });
-
-        // Good
-        Schema::create('users', function (Blueprint $table) {
-            ...
-        });
-    }
-
-    public function down()
-    {
-        // Bad
-        Schema::dropIfExists('user');
-
-        // Good
-        Schema::dropIfExists('users');
-    }
-}
+    // Good
+    users, places, tours
 ```
 
-## 7. Tên cột trong bảng
+## 6. Tên cột trong bảng
 
 Quy tắc đặt tên:
 
 - Tên cột phải phải là một danh từ tiếng Anh.
 - Không chứa dấu cách.
-- Kiểu snake_case
+- Kiểu snake_case 🐍
 
 ```php
-<? php
+    // Bad
+    full-name, fullName
 
-class CreateUsersTable extends Migration
-{
-    public function up()
-    {
-        // Bad
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('fullName', 255)->nullable();
-            $table->string('Password', 255)->nullable();
-        });
-
-        // Good
-        Schema::create('users', function (Blueprint $table) {
-            $table->string('full_name', 255)->nullable();
-            $table->string('password', 255)->nullable();
-        });
-    }
-
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
-}
+    // Good
+    full_name
 ```
 
-## 8. Variable
+## 7. Variable
 
 Quy tắc đặt tên:
 
@@ -222,30 +152,13 @@ $full_name, $FULL_NAME, $FullName
 $fullName, $articlesWithAuthor
 ```
 
-## 9. Blade view files
-
-Quy tắc đặt tên:
-
-- Tên view files phải phải là một danh từ tiếng Anh.
-- Không chứa dấu cách.
-- kebab_case
-
-```php
-//Bad
-showFiltered.blade.php
-show_filtered.blade.php
-
-//Good
-show-filtered.blade.php
-```
-
-## 10. Config
+## 8. Config
 
 Quy tắc đặt tên:
 
 - Tên Config phải phải là một danh từ tiếng Anh.
 - Không chứa dấu cách.
-- snake_case  🐍
+- snake_case 🐍
 
 ```php
 <?php
