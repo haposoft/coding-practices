@@ -72,4 +72,4 @@ function numberToWord($num) {
 
 ```
 
-Về cơ bản, cả hai cách đều đúng và giải quyết được bài toán. Tuy nhiên, sử dụng if-else sẽ giúp cho code dễ hiểu hơn, trong khi sử dụng toán tử 3 ngôi có thể làm cho code ngắn hơn và gọn hơn. Tuy nhiên, việc sử dụng toán tử 3 ngôi cũng nên được sử dụng một cách cẩn thận để tránh làm cho code trở nên khó hiểu.
+Về cơ bản cả ba cách đều đúng và có thể giải quyết được bài toán. Sử dụng if-else, switch-case làm cho code dễ hiểu hơn, trong khi toán tử 3 ngôi giúp code ngắn gọn hơn. Tuy nhiên, khi sử dụng toán tử 3 ngôi, cần cẩn thận để tránh làm cho code khó hiểu.
