@@ -17,16 +17,16 @@ Quy trình chuẩn như vậy bao gồm các bước sau:
 3. Lấy ra dữ liệu
 
 ````php
-//Bad
+<?php
+
+// Bad
 public function index()
 {
     $apiKey = env('API_KEY');
 }
 
-//Good
+// Good
 // config/api.php
-<?php
-
 return [
     ...
     'key' => env('API_KEY'),
