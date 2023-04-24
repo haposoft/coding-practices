@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Ternary Operator
 
-## Tại sao nên sử dụng if-else, switch-case thay vì toán tử 3 ngôi?
+## 1. Tại sao nên sử dụng if-else, switch-case thay vì toán tử 3 ngôi?
 
 Cả if-else và toán tử ba ngôi đều có thể được sử dụng để thực hiện các phép so sánh và điều khiển luồng chương trình trong lập trình. Tuy nhiên, trong một số trường hợp, if-else có thể làm cho code của bạn trở nên dễ đọc hơn so với toán tử ba ngôi.
 
@@ -21,11 +21,11 @@ Dưới đây là một số lý do tại sao bạn nên sử dụng if-else tha
 
 // Bad
 function numberToWord($num) {
-    return ($num == 1) ? "one" 
-    : (($num == 2) ? "two" 
-    : (($num == 3) ? "three" 
-    : (($num == 4) ? "four" 
-    : (($num == 5) ? "five" 
+    return ($num == 1) ? "one"
+    : (($num == 2) ? "two"
+    : (($num == 3) ? "three"
+    : (($num == 4) ? "four"
+    : (($num == 5) ? "five"
     : "Error: Invalid number"))));
 }
 

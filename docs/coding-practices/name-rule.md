@@ -127,11 +127,11 @@ Quy tắc đặt tên:
 - Kiểu snake_case 🐍
 
 ```php
-    // Bad
-    full-name, fullName
+// Bad
+full-name, fullName
 
-    // Good
-    full_name
+// Good
+full_name
 ```
 
 ## 7. Variable
