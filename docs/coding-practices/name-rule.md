@@ -91,7 +91,6 @@ Quy tắc đặt tên:
 namespace App\Models;
 
 // Bad
-
 class Users {
     ...
 }
@@ -111,11 +110,11 @@ Quy tắc đặt tên:
 - Phải là số nhiều
 
 ```php
-    // Bad
-    user, place, tour
+// Bad
+user, place, tour
 
-    // Good
-    users, places, tours
+// Good
+users, places, tours
 ```
 
 ## 6. Tên cột trong bảng
@@ -143,12 +142,12 @@ Quy tắc đặt tên:
 - camelCase 🐫
 
 ```php
-<? php
+<?php
 
-//Bad
+// Bad
 $full_name, $FULL_NAME, $FullName
 
-//Good
+// Good
 $fullName, $articlesWithAuthor
 ```
 
@@ -165,10 +164,10 @@ Quy tắc đặt tên:
 
 return [
     // Bad
-    "users-per-page" => 10,
-    "toursPerPage" => 10,
+    'users-per-page' => 10,
+    'toursPerPage' => 10,
 
     // Good
-    "users_per_page" => 10,
-    "tours_per_page" => 10,
+    'users_per_page' => 10,
+    'tours_per_page' => 10,
 ];

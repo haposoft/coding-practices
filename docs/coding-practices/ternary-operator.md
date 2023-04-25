@@ -21,28 +21,28 @@ Dưới đây là một số lý do tại sao bạn nên sử dụng if-else tha
 
 // Bad
 function numberToWord($num) {
-    return ($num == 1) ? "one"
-    : (($num == 2) ? "two"
-    : (($num == 3) ? "three"
-    : (($num == 4) ? "four"
-    : (($num == 5) ? "five"
-    : "Error: Invalid number"))));
+    return ($num == 1) ? 'one'
+    : (($num == 2) ? 'two'
+    : (($num == 3) ? 'three'
+    : (($num == 4) ? 'four'
+    : (($num == 5) ? 'five'
+    : 'Error: Invalid number'))));
 }
 
 // Good
 function numberToWord($num) {
     if ($num == 1) {
-        return "one";
+        return 'one';
     } else if ($num == 2) {
-        return "two";
+        return 'two';
     } else if ($num == 3) {
-        return "three";
+        return 'three';
     } else if ($num == 4) {
-        return "four";
+        return 'four';
     } else if ($num == 5) {
-        return "five";
+        return 'five';
     } else {
-        return "Error: Invalid number";
+        return 'Error: Invalid number';
     }
 }
 
@@ -50,26 +50,24 @@ function numberToWord($num) {
 function numberToWord($num) {
     switch($num) {
         case 1:
-            return "one";
+            return 'one';
             break;
         case 2:
-            return "two";
+            return 'two';
             break;
         case 3:
-            return "three";
+            return 'three';
             break;
         case 4:
-            return "four";
+            return 'four';
             break;
         case 5:
-            return "five";
+            return 'five';
             break;
         default:
-            return "Error: Invalid number";
+            return 'Error: Invalid number';
     }
 }
-
-
 ```
 
 Về cơ bản cả ba cách đều đúng và có thể giải quyết được bài toán. Sử dụng if-else, switch-case làm cho code dễ hiểu hơn, trong khi toán tử 3 ngôi giúp code ngắn gọn hơn. Tuy nhiên, khi sử dụng toán tử 3 ngôi, cần cẩn thận để tránh làm cho code khó hiểu.
