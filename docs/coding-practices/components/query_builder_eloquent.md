@@ -14,7 +14,7 @@ Ví dụ về Query Builder trong Laravel:
             ->get();
 
   ```
-Ví dụ về Query Builder - lấy tạo sửa xóa :
+Ví dụ về Query Builder - crud :
 ```php
 //create
 DB::table('users')->insert([
@@ -42,7 +42,7 @@ DB::table('users')->where('id', 1)->delete();
 - bạn có thể tương tác với các bảng trong cơ sở dữ liệu thông qua các mô hình (**models**) Laravel.
 - Eloquent tự động ánh xạ các mô hình với các bảng tương ứng và cung cấp các phương thức và quan hệ để thao tác dữ liệu.
 
-Ví dụ về Query Builder trong Laravel:
+Ví dụ về Eloquent trong Laravel:
 ```php
 class User extends Model
 {
@@ -51,7 +51,7 @@ class User extends Model
 
 User::all();
 ```
-Ví dụ về Eloquent - lấy tạo sửa xóa :
+Ví dụ về Eloquent - crud :
 ```php
 //create
 $user = new User;
